@@ -1,9 +1,11 @@
 var express = require("express");
 var app = express();
+app.engine('html', require('ejs').renderFile);
+app.set('views', __dirname + '/views');
 app.use(express.logger());
 
 app.get('/', function(request, response) {
-  response.send('Hello World! from Onkar');
+  response.render('index.html');
 });
 
 var port = process.env.PORT || 5000;
