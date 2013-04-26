@@ -6,19 +6,18 @@ app.set('views', __dirname + '/views');
 app.use(express.logger());
 app.use('/static', express.static(__dirname + '/public'));
 app.use(express.bodyParser());
+var recipedao= new RecipeDAO();
 
-var recipe = new RecipeDAO();
 
 app.get('/', function(request, response) {	
-	recipe.init();
+	
   	response.render('index.html');
 });
 
 app.get('/api/letmecook/:style', function(request, response) {
-  
   var ingredients = request.query.i;
   console.log(ingredients);
-  var recipedao= new RecipeDAO();
+  
   recipedao.getRecipe(ingredients.split(','),function(recipes)
   {	
   	response.json('200',recipes);
