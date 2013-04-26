@@ -2,7 +2,7 @@ var RecipeDAO =  function() {};
 
 RecipeDAO.prototype.dummydata = [];
 
-RecipeDAO.prototype.getRecipe = function(ind) {
+RecipeDAO.prototype.getRecipe = function(ind,callback) {
     //lookup the array
     //console.log(this.dummydata);
     //to-do : maintain hashmap and lookup
@@ -57,7 +57,7 @@ RecipeDAO.prototype.getRecipe = function(ind) {
           
         major_flag=true;
     }
-    return result;
+    callback(result);
 };
 
 RecipeDAO.prototype.fillInData = function(data) {

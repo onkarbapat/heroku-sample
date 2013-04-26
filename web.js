@@ -18,9 +18,12 @@ app.get('/api/letmecook/:style', function(request, response) {
   var ingredients = request.query.i;
   console.log(ingredients);
   var recipedao= new RecipeDAO();
-  var recipes=recipedao.getRecipe(ingredients.split(','))
-  response.set('Content/Type','application/json');
-  response.send('200',JSON.stringify(recipes));
+  recipedao.getRecipe(ingredients.split(','),function(recipes)
+  {
+  	response.set('Content/Type','application/json');
+  	response.json('200',recipes);
+  })
+  
 });
 
 var port = process.env.PORT || 5000;
