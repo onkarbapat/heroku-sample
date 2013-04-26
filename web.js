@@ -20,7 +20,6 @@ app.get('/api/letmecook/:style', function(request, response) {
   var recipedao= new RecipeDAO();
   recipedao.getRecipe(ingredients.split(','),function(recipes)
   {
-  	response.set('Content/Type','application/json');
   	response.json('200',recipes);
   })
   
