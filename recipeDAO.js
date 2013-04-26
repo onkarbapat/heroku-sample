@@ -21,7 +21,7 @@ RecipeDAO.prototype.getRecipe = function(ind,callback) {
                 //console.log(i); 
                 if (this.dummydata[i].ingredients.length==ind.length)
                 {
-                    if (this.dummydata[i].ingredients[j]==ind[k])
+                    if (this.dummydata[i].ingredients[j].toLowerCase()==ind[k].toLowerCase())
                       {
                         flag[k]=true;
                         break;
