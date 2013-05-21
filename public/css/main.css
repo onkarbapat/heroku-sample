@@ -1,0 +1,88 @@
+html, body {
+height: 100%;
+}
+div.hero-unit>a
+{
+    display: inline-block;
+    float: right;
+}
+
+#search_results div{
+    border: 2px solid;
+    margin-bottom: 20px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.icon-heart{
+	margin-left: 95%
+}
+
+#header
+{
+	background-color: #E6B85C;
+	padding: 10px;
+	height: 30px;
+}
+
+#header h4
+{
+	float: left;
+}
+
+#header a
+{
+	float: right;
+
+}
+
+#letscook
+{
+	position: relative;
+	display: block;
+	top:150px;
+	font-family: 'Yellowtail', cursive;
+	text-align: center;
+}
+
+#letscook h1
+{
+    font-size: 80px;
+    padding-bottom: 30px;
+}
+
+#letscook input
+{
+	width: 350px;
+	height: 30px;
+	
+    padding: 0.2em;
+    margin: 0.1em 0.2em;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+#letscook #search
+{
+	width: 50px;
+	
+	height: 25px;
+    padding: 0.2em;
+    margin: 0.1em 1.2em;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+
+}
+
+.footer
+{
+position: fixed;
+left: 0px;
+bottom: 0px;
+height: 30px;
+width: 100%;
+margin-left: 0px;
+text-align: center;
+}
