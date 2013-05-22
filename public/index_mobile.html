@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>
+            Let Me Cook
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+        <link rel="stylesheet" href="../static/css/jquery-ui.css">
+    </head>
+    <body>
+        <div data-role="page" id="page1">
+            <div data-theme="b" data-role="header">
+                <h5>
+                    Let Me Cook
+                </h5>
+            </div>
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <input name="" id="ingredients" placeholder="What ingredients do you have?"
+                    value="" type="text">
+                </div>
+                <a data-role="button" href="#page1" data-icon="arrow-r" data-iconpos="right">
+                    Cook
+                </a>
+            </div>
+        </div>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script type="text/javascript" src="../static/js/libs/utils.js"></script>
+    <script type="text/javascript" src="../static/js/models/ingredients.js"></script>
+    <script type="text/javascript">
+            $( "#ingredients" ).autocomplete({
+                //source: app.INGRE
+            source: function( request, response ) {
+          // delegate back to autocomplete, but extract the last term
+              response( $.ui.autocomplete.filter(
+                app.INGRE.data, app.utils.extractLast( request.term ) ) );
+            },
+            focus: function() {
+              // prevent value inserted on focus
+              return false;
+            },
+            select: function( event, ui ) {
+              var terms = app.utils.split( this.value );
+              // remove the current input
+              terms.pop();
+              // add the selected item
+              terms.push(ui.item.value );
+              // add placeholder to get the comma-and-space at the end
+              terms.push("");
+              this.value = terms.join(",");
+              return false;
+            }
+            });
+        </script>
+    </body>
