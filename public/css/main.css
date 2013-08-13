@@ -76,6 +76,42 @@ div.hero-unit>a
 
 }
 
+
+#post_form
+{
+	background-color: #E6B85C;
+	position: relative;
+	margin: auto 300px;
+	margin-top: 75px;
+	padding: 30px;
+
+}
+
+#post_form>div
+{
+    
+}
+
+#post_form>div>input
+{
+
+    display: block;
+    width: 400px;
+    margin: auto;
+    margin-bottom: 40px;
+
+}
+
+#steps
+{
+
+    margin: auto;
+    display: block;
+    width: 400px;
+    max-width: 400px;
+
+}
+
 .footer
 {
 position: fixed;
@@ -85,4 +121,12 @@ height: 30px;
 width: 100%;
 margin-left: 0px;
 text-align: center;
+}
+
+button#Post
+{
+	position: relative;
+	margin-left: 340px;
+	margin-top: 20px;
+	display: block;
 }
